@@ -26,7 +26,14 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "projectReferences": {}
+            "projectReferences": {
+              "D:\\Users\\masan\\Documents\\GitHub\\Teste-Ubus\\src\\Ubus.Solution\\src\\Ubus.Business\\Ubus.Business.csproj": {
+                "projectPath": "D:\\Users\\masan\\Documents\\GitHub\\Teste-Ubus\\src\\Ubus.Solution\\src\\Ubus.Business\\Ubus.Business.csproj"
+              },
+              "D:\\Users\\masan\\Documents\\GitHub\\Teste-Ubus\\src\\Ubus.Solution\\src\\Ubus.Data\\Ubus.Data.csproj": {
+                "projectPath": "D:\\Users\\masan\\Documents\\GitHub\\Teste-Ubus\\src\\Ubus.Solution\\src\\Ubus.Data\\Ubus.Data.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -41,6 +48,12 @@
             "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
               "target": "Package",
               "version": "[3.1.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.8, )"
             }
           },
           "imports": [
@@ -57,6 +70,138 @@
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
             },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Users\\masan\\Documents\\GitHub\\Teste-Ubus\\src\\Ubus.Solution\\src\\Ubus.Business\\Ubus.Business.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Users\\masan\\Documents\\GitHub\\Teste-Ubus\\src\\Ubus.Solution\\src\\Ubus.Business\\Ubus.Business.csproj",
+        "projectName": "Ubus.Business",
+        "projectPath": "D:\\Users\\masan\\Documents\\GitHub\\Teste-Ubus\\src\\Ubus.Solution\\src\\Ubus.Business\\Ubus.Business.csproj",
+        "packagesPath": "C:\\Users\\masan\\.nuget\\packages\\",
+        "outputPath": "D:\\Users\\masan\\Documents\\GitHub\\Teste-Ubus\\src\\Ubus.Solution\\src\\Ubus.Business\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\masan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Users\\masan\\Documents\\GitHub\\Teste-Ubus\\src\\Ubus.Solution\\src\\Ubus.Data\\Ubus.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Users\\masan\\Documents\\GitHub\\Teste-Ubus\\src\\Ubus.Solution\\src\\Ubus.Data\\Ubus.Data.csproj",
+        "projectName": "Ubus.Data",
+        "projectPath": "D:\\Users\\masan\\Documents\\GitHub\\Teste-Ubus\\src\\Ubus.Solution\\src\\Ubus.Data\\Ubus.Data.csproj",
+        "packagesPath": "C:\\Users\\masan\\.nuget\\packages\\",
+        "outputPath": "D:\\Users\\masan\\Documents\\GitHub\\Teste-Ubus\\src\\Ubus.Solution\\src\\Ubus.Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\masan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "D:\\Users\\masan\\Documents\\GitHub\\Teste-Ubus\\src\\Ubus.Solution\\src\\Ubus.Business\\Ubus.Business.csproj": {
+                "projectPath": "D:\\Users\\masan\\Documents\\GitHub\\Teste-Ubus\\src\\Ubus.Solution\\src\\Ubus.Business\\Ubus.Business.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Abstractions": {
+              "target": "Package",
+              "version": "[3.1.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[3.1.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.8, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

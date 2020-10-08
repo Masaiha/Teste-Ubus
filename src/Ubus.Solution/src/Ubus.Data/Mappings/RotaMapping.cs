@@ -1,10 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Ubus.Business.Models;
 
 namespace Ubus.Data.Mappings
 {
-    class RotaMapping
+    public class RotaMapping : IEntityTypeConfiguration<Rota>
     {
+        public void Configure(EntityTypeBuilder<Rota> builder)
+        {
+            builder.HasKey(r => r.Id);
+
+            builder.Property(r => r.Itinerario)
+                .IsRequired()
+                .HasColumnType("varchar(500)");
+
+            builder.ToTable("Rotas");
+        }
     }
 }
