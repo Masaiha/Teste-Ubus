@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Ubus.App.ViewModels.ViagemViewModel>
+
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>
+                id
+            </th>
+            <th>
+                Nome
+            </th>
+            <th>
+                Data de saída
+            </th>
+            <th>
+
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.Id.ToString()
+                </td>
+                <td>
+                    @item.Nome
+                </td>
+                <td>
+                    @item.Saida
+                </td>
+                <td class="text-right">
+                    <a class="btn btn-warning" asp-action="Details"> Detalhes </a>
+                    <a class="btn btn-info" asp-action="Edit"> Editar </a>
+                    <a class="btn btn-danger" asp-action="Delete"> Excluir </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

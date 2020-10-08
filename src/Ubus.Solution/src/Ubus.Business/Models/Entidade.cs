@@ -4,7 +4,7 @@ namespace Ubus.Business.Models
 {
     public abstract class Entidade
     {
-        public Guid Id { get; private set; }
+        public Guid Id { get; set; }
 
         public Entidade()
         {

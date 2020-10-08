@@ -10,6 +10,10 @@ namespace Ubus.Data.Mappings
         {
             builder.HasKey(i => i.Id);
 
+            builder.Property(i => i.Nome)
+                .IsRequired()
+                .HasColumnType("varchar(50)");
+
             builder.Property(i => i.Valor)
                 .IsRequired()
                 .HasColumnType("decimal");

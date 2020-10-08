@@ -1,9 +1,11 @@
 ﻿using System;
 
-namespace Ubus.Business.Models
+namespace Ubus.App.ViewModels
 {
-    public class Viagem : Entidade
+    public class ViagemViewModel
     {
+
+        public Guid Id { get; set; }
         public string Nome { get; set; }
         public decimal Valor { get; set; }
         public bool Finalizado { get; set; }
@@ -12,7 +14,7 @@ namespace Ubus.Business.Models
         public Guid VeiculoId { get; set; }
         public Guid RotaId { get; set; }
 
-        public Rota Rota { get; set; }
-        public Veiculo Veiculo { get; set; }
+        public RotaViewModel Rota { get; set; }
+        public VeiculoViewModel Veiculo { get; set; }
     }
 }
