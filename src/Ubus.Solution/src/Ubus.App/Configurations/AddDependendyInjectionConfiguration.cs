@@ -15,6 +15,9 @@ namespace Ubus.App.Configurations
             services.AddScoped<IViagemRepository, ViagemRepository>();
             services.AddScoped<IMotoristaRepository, MotoristaRepository>();
             services.AddScoped<IMotoristaViagemRepository, MotoristaViagemRepository>();
+            services.AddScoped<IVeiculoRepository, VeiculoRepository>();
+            services.AddScoped<IItemRepository, ItemRepository>();
+            services.AddScoped<IAdicionalRepository, AdicionalRepository>();
 
             /* Services */
 

@@ -1,0 +1,46 @@
+﻿@model Ubus.App.ViewModels.VeiculoItensViewModel
+
+<div class="container jumbotron">
+    Motoristas
+</div>
+
+
+<div class="container jumbotron">
+    <div>
+        <p>Itens do Veículo -  @ViewData["VeiculoId"]</p>
+    </div>
+</div>
+<table class="table table-hover ">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">
+                Id
+            </th>
+            <th scope="col">
+                Nome
+            </th>
+            <th scope="col">
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Itens)
+        {
+            <tr>
+                <td scope="row">
+                    @item.Id
+                </td>
+                <td scope="row">
+                    @item.Nome
+                </td>
+                <td class="text-right" scope="row">
+                    @*<a class="btn btn-warning my-1" asp-action="Details" asp-route-id="@item.Id"> Detalhes </a>*@
+                    @*<a class="btn btn-info my-1" asp-action="Edit"> Editar </a>*@
+                    <a class="btn btn-danger my-1" asp-action="ExcluirItem" asp-route-IdVeiculoItem="@Model.Id" asp-route-idVeiculo="@Model.VeiculoId"> Excluir </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+

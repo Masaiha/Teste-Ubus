@@ -16,6 +16,7 @@ namespace Ubus.App.Configurations
             CreateMap<ViagemMotoristaViewModel, ViagemMotorista>().ReverseMap();
             CreateMap<ViagemViewModel, Viagem>().ReverseMap();
             CreateMap<MotoristaViagemViewModel, MotoristaViagem>().ReverseMap();
+            CreateMap<VeiculoItensViewModel, VeiculoItens>().ReverseMap();
 
         }
     }

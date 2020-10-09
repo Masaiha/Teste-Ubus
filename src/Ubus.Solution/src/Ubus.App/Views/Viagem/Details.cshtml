@@ -12,5 +12,15 @@
 <hr />
 <div class="container">
     <h3>Alterar Motorista</h3>
-    <a class="btn btn-primary" asp-controller="Motorista" asp-action="AlteracaoMotoristaViagem" asp-route-idViagem="@Model.Id">Alterar Motorista</a>
+    <a class="btn btn-primary" asp-controller="Motorista" asp-action="AlteracaoMotoristaViagem" asp-route-idViagem="@Model.Id">Alterar</a>
+</div>
+
+<hr />
+<div class="container">
+    <h3>Alterar itens veículo</h3>
+    <h4>Veículo ID: @Model.Veiculo.Id</h4>
+    <h4>Marca: @Model.Veiculo.Marca</h4>
+    <h4>Modelo: @Model.Veiculo.Modelo</h4>
+
+    <a class="btn btn-primary" asp-controller="Veiculo" asp-action="AlteracaoItensVeiculo" asp-route-idVeiculo="@Model.Veiculo.Id">Alterar</a>
 </div>

@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Ubus.App.ViewModels.VeiculoViewModel>
+
+<div class="container jumbotron">
+    Motoristas
+</div>
+
+
+<div class="container jumbotron">
+    <div>
+        <p>Veículos Cadastrados</p>
+    </div>
+</div>
+<table class="table table-hover ">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">
+                Id
+            </th>
+            <th scope="col">
+                Marca
+            </th>
+            <th scope="col">
+                Modelo
+            </th>
+            <th scope="col">
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td scope="row">
+                    @item.Id
+                </td>
+                <td scope="row">
+                    @item.Marca
+                </td>
+                <td scope="row">
+                    @item.Modelo
+                </td>
+                <td class="text-right" scope="row">
+                    <a class="btn btn-warning my-1" asp-action="Details" asp-route-id="@item.Id"> Detalhes </a>
+                    <a class="btn btn-info my-1" asp-action="Edit"> Editar </a>
+                    <a class="btn btn-danger my-1" asp-action="Delete"> Excluir </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+

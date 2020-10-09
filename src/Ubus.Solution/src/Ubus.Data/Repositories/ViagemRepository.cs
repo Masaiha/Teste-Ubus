@@ -1,7 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Internal;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -53,10 +51,8 @@ namespace Ubus.Data.Repositories
         }
 
         public IEnumerable<ViagemMotorista> FiltrarViagemsPorDia()
-        {
-            var teste = ObterTodosViagemMotoristas();
-                    
-            var filtrado = teste.Where(t => t.Saida.Date == DateTime.Now.Date);
+        {                  
+            var filtrado = ObterTodosViagemMotoristas().Where(t => t.Saida.Date == DateTime.Now.Date);
 
             return filtrado;
         }
