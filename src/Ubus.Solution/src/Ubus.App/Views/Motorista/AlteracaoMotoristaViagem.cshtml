@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Ubus.App.ViewModels.MotoristaViewModel>
+>
+
+<h1>Alteração</h1>
+
+<h4>Motorista</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="EditarMotoristaViagem">
+            <div class="form-group">
+                <label>Selecione um motorista</label>
+                <select class="browser-default custom-select" asp-for="@Model.FirstOrDefault().Id">
+                    <option selected></option>
+                    @foreach (var item in Model)
+                    {
+                        <option  value="@item.Id">@item.Nome</option>
+                    }
+                </select>
+            </div>
+            <input asp-for="@Model.FirstOrDefault().ViagemId" type="hidden" value="@ViewData["ViagemId"]" />
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+

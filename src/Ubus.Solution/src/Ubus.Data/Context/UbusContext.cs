@@ -14,6 +14,7 @@ namespace Ubus.Data.Context
         public UbusContext(DbContextOptions<UbusContext> options) : base(options) { }
 
         public DbSet<Rota> Rotas { get; set; }
+        public DbSet<MotoristaViagem> MotoristaViagens { get; set; }
         public DbSet<Motorista> Motoristas { get; set; }
         public DbSet<Item> Itens { get; set; }
         public DbSet<AdicionalItem> AdicionalItens { get; set; }

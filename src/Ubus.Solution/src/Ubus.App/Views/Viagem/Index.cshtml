@@ -1,42 +1,51 @@
-﻿@model IEnumerable<Ubus.App.ViewModels.ViagemViewModel>
+﻿@model IEnumerable<Ubus.App.ViewModels.ViagemMotoristaViewModel>
 
-
-<table class="table table-hover">
-    <thead>
+<div class="container jumbotron">
+    <div>
+        <a class="btn btn-dark" asp-action="FiltrarViagemsPorDia">Somente as de hoje</a>
+    </div>
+</div>
+<table class="table table-hover ">
+    <thead class="thead-dark">
         <tr>
-            <th>
-                id
-            </th>
-            <th>
+            <th scope="col">
                 Nome
             </th>
-            <th>
+            <th scope="col">
                 Data de saída
             </th>
-            <th>
-
+            <th scope="col">
+                Motorista
+            </th>
+            <th scope="col">
+                Vencido?
+            </th>
+            <th scope="col">
             </th>
         </tr>
     </thead>
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    @item.Id.ToString()
-                </td>
-                <td>
-                    @item.Nome
-                </td>
-                <td>
-                    @item.Saida
-                </td>
-                <td class="text-right">
-                    <a class="btn btn-warning" asp-action="Details"> Detalhes </a>
-                    <a class="btn btn-info" asp-action="Edit"> Editar </a>
-                    <a class="btn btn-danger" asp-action="Delete"> Excluir </a>
-                </td>
-            </tr>
+        <tr>
+            <td scope="row">
+                @item.Nome
+            </td>
+            <td scope="row">
+                @item.Saida
+            </td>
+            <td scope="row">
+                @if(@item.Motorista != null) @item.Motorista.Nome
+            </td>
+            <td scope="row">
+                @(item.Chegada < DateTime.Now ? "Sim" : "")
+            </td>
+            <td class="text-right" scope="row">
+                <a class="btn btn-warning my-1" asp-action="Details" asp-route-id="@item.Id"> Detalhes </a>
+                <a class="btn btn-info my-1" asp-action="Edit"> Editar </a>
+                <a class="btn btn-danger my-1" asp-action="Delete"> Excluir </a>
+            </td>
+        </tr>
         }
     </tbody>
 </table>

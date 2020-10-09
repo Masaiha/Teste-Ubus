@@ -1,0 +1,16 @@
+﻿@model Ubus.App.ViewModels.ViagemViewModel
+
+
+<div>@Model.Id</div>
+<div>@Model.Nome</div>
+<div>@Model.Saida</div>
+<div>@Model.Chegada</div>
+<div>@Model.Finalizado</div>
+<div>@Model.Rota.Itinerario</div>
+<div>@Model.Veiculo.Modelo</div>
+
+<hr />
+<div class="container">
+    <h3>Alterar Motorista</h3>
+    <a class="btn btn-primary" asp-controller="Motorista" asp-action="AlteracaoMotoristaViagem" asp-route-idViagem="@Model.Id">Alterar Motorista</a>
+</div>
