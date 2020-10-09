@@ -56,5 +56,13 @@ namespace Ubus.App.Controllers
 
             return View("index");
         }
+
+        [HttpGet("motoristas-por-rota/{idRota:guid}")]
+        public async Task<ActionResult<IEnumerable<MotoristaViewModel>>> ObterMotoristaPorRota(Guid idRota)
+        {
+            var motoristas = _mapper.Map<IEnumerable<MotoristaViewModel>>(_motoristaRepository.ObterMotoristasPorRota(idRota));
+
+            return View(motoristas);
+        }
     }
 }

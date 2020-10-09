@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Ubus.App.ViewModels.MotoristaViewModel>
+
+
+<div class="container jumbotron">
+    <h3>Lista de motoristas por rota</h3>
+</div>
+<table class="table table-hover ">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">
+                Nome
+            </th>
+            <th scope="col">
+                Cpf
+            </th>
+            <th scope="col">
+                Ativo
+            </th>
+            <th scope="col">
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td scope="row">
+                    @item.Nome
+                </td>
+                <td scope="row">
+                    @item.Cpf
+                </td>
+                <td scope="row">
+                    @item.Ativo
+                </td>
+                <td class="text-right" scope="row">
+                    <a class="btn btn-warning my-1"> Detalhes </a>
+                    <a class="btn btn-info my-1" > Editar </a>
+                    <a class="btn btn-danger my-1" > Excluir </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

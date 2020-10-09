@@ -64,5 +64,20 @@ namespace Ubus.Data.Repositories
                 .Include(v => v.Veiculo)
                 .FirstOrDefaultAsync(v => v.Id == id);
         }
+
+        public void AtualizarViagensFinalizadas()
+        {
+            var viagens = Db.Viagens.AsNoTracking().ToList();
+
+            foreach (var item in viagens)
+            {
+                if (item.Chegada.Date < DateTime.Now.Date && item.Finalizado == false) 
+                    item.Finalizado = true;
+
+                Db.Viagens.Update(item);
+            }
+
+            Db.SaveChanges();
+        }
     }
 }

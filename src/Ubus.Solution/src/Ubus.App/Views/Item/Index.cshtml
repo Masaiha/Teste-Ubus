@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Ubus.App.ViewModels.ItemViewModel>
+
+@{
+    ViewData["Title"] = "Lista de Itens";
+}
+
+<h1>@ViewData["Title"]</h1>
+<hr />
+
+<p>
+    <a class="btn btn-info" asp-action="Adicionar">Novo Item</a>
+</p>
+<table class="table table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td class="text-right">
+                    <a class="btn btn-warning" asp-action="Detalhes" asp-route-id="@item.Id">Detalhes</a>
+                    <a class="btn btn-info" asp-action="Editar" asp-route-id="@item.Id">Editar</a>
+                    <a class="btn btn-danger" asp-action="Remover" asp-route-id="@item.Id">Remover</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

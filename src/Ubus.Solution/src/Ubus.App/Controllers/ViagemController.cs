@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Ubus.App.ViewModels;
 using Ubus.Business.Interfaces.Repositories;
+using Ubus.Business.Models;
 
 namespace Ubus.App.Controllers
 {
@@ -30,6 +31,14 @@ namespace Ubus.App.Controllers
             return View(viagemMotoristaViewModel);
         }
 
+        [HttpPost]
+        public async Task<ActionResult> Adicionar(ViagemViewModel viagemViewModel)
+        {
+            await _viagemRepository.Adicionar(_mapper.Map<Viagem>(viagemViewModel));
+
+            return View(viagemViewModel);
+        }
+
         [HttpGet("filtrado-dia-atual")]
         public ActionResult<IEnumerable<ViagemMotoristaViewModel>> FiltrarViagemsPorDia()
         {
@@ -44,6 +53,16 @@ namespace Ubus.App.Controllers
             var viagensViewModel = _mapper.Map<ViagemViewModel>(await _viagemRepository.ObterPorId(id));
             
             return View(viagensViewModel);
+        }
+
+        [HttpGet("atualizar-status-viagens-finalizadas")]
+        public ActionResult AtualizarViagensFinalizadas()
+        {
+             _viagemRepository.AtualizarViagensFinalizadas();
+
+            var viagemMotoristaViewModel = _mapper.Map<IEnumerable<ViagemMotoristaViewModel>>(_viagemRepository.ObterTodosViagemMotoristas());
+
+            return View("Index", viagemMotoristaViewModel);
         }
 
     }
