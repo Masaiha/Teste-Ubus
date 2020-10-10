@@ -34,5 +34,38 @@ namespace Ubus.Data.Repositories
         {
             return await Db.AdicionalItens.Where(x => x.VeiculoId == id).ToListAsync();
         }
+
+        public IEnumerable<AdicionalItem> ObterVeiculosItensPorRotaId(Guid idRota)
+        {
+            var all =
+                from rotas in Db.Rotas
+                join viagens in Db.Viagens
+                  on rotas.Id equals viagens.RotaId
+                join veiculos in Db.Veiculos
+                  on viagens.VeiculoId equals veiculos.Id
+                join adicionalItens in Db.AdicionalItens
+                  on veiculos.Id equals adicionalItens.VeiculoId
+                join itens in Db.Itens
+                  on adicionalItens.ItemId equals itens.Id
+                select new
+                {
+                    veiculos,
+                    itens
+                };
+
+            var listitensVeiculo = new List<AdicionalItem>();
+
+            foreach (var item in all)
+            {
+                listitensVeiculo.Add(new AdicionalItem()
+                {
+                    VeiculoId = item.veiculos.Id,
+                    Item = new Item() { Id = item.itens.Id, Nome = item.itens.Nome }
+                });
+            }
+
+            return listitensVeiculo;
+
+        }
     }
 }

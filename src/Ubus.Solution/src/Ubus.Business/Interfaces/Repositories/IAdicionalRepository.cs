@@ -9,5 +9,7 @@ namespace Ubus.Business.Interfaces.Repositories
     {
         Task ExcluirItemVeiculo(Guid idAdicionalItem);
         Task<IEnumerable<AdicionalItem>> ObterPorIdVeiculo(Guid id);
+
+        IEnumerable<AdicionalItem> ObterVeiculosItensPorRotaId(Guid idRota);
     }
 }
