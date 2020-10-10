@@ -1,31 +1,11 @@
 ﻿@model Ubus.App.ViewModels.ViagemViewModel
 
 
-<div>@Model.Id</div>
+@*<div>@Model.Id</div>
 <div>@Model.Nome</div>
 <div>@Model.Saida</div>
 <div>@Model.Chegada</div>
 <div>@Model.Finalizado</div>
 <div>@Model.Rota.Itinerario</div>
-<div>@Model.Veiculo.Modelo</div>
+<div>@Model.Veiculo.Modelo</div>*@
 
-<hr />
-<div class="container">
-    <h3>Alterar Motorista</h3>
-    <a class="btn btn-primary" asp-controller="Motorista" asp-action="AlteracaoMotoristaViagem" asp-route-idViagem="@Model.Id">Alterar</a>
-</div>
-
-<div class="container">
-    <h3>Motorista que fizeram esta Rota</h3>
-    <a class="btn btn-warning" asp-controller="Motorista" asp-action="ObterMotoristaPorRota" asp-route-idRota="@Model.Rota.Id">Consultar</a>
-</div>
-
-<hr />
-<div class="container">
-    <h3>Alterar itens veículo</h3>
-    <h4>Veículo ID: @Model.Veiculo.Id</h4>
-    <h4>Marca: @Model.Veiculo.Marca</h4>
-    <h4>Modelo: @Model.Veiculo.Modelo</h4>
-
-    <a class="btn btn-primary" asp-controller="Veiculo" asp-action="AlteracaoItensVeiculo" asp-route-idVeiculo="@Model.Veiculo.Id">Alterar</a>
-</div>

@@ -26,11 +26,11 @@ namespace Ubus.App.Controllers
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<MotoristaViewModel>> Index()
+        public async Task<ActionResult<IEnumerable<MotoristaViewModel>>> Index()
         {
-            //var viagemMotoristaViewModel = _mapper.Map<IEnumerable<ViagemMotoristaViewModel>>(_viagemRepository.ObterTodosViagemMotoristas());
+            var motoristaViewModel = _mapper.Map<IEnumerable<MotoristaViewModel>>(await _motoristaRepository.ObterTodos());
 
-            return View();
+            return View(motoristaViewModel);
         }
 
         [HttpGet("selecao-motorista/{idViagem:guid}")]
@@ -58,11 +58,30 @@ namespace Ubus.App.Controllers
         }
 
         [HttpGet("motoristas-por-rota/{idRota:guid}")]
-        public async Task<ActionResult<IEnumerable<MotoristaViewModel>>> ObterMotoristaPorRota(Guid idRota)
+        public ActionResult<IEnumerable<MotoristaViewModel>> ObterMotoristaPorRota(Guid idRota)
         {
             var motoristas = _mapper.Map<IEnumerable<MotoristaViewModel>>(_motoristaRepository.ObterMotoristasPorRota(idRota));
 
             return View(motoristas);
         }
+
+        [HttpGet("adicionar-motoristas")]
+        public IActionResult Adicionar()
+        {
+            return View();
+        }
+
+        [HttpPost("adicionar-motoristas")]
+        public async Task<IActionResult> Adicionar(MotoristaViewModel motoristaViewModel)
+        {
+            if (!ModelState.IsValid) return BadRequest();
+
+            await _motoristaRepository.Adicionar(_mapper.Map<Motorista>(motoristaViewModel));
+
+            var _motoristaViewModel = _mapper.Map<IEnumerable<MotoristaViewModel>>(await _motoristaRepository.ObterTodos());
+
+            return View("Index", _motoristaViewModel);
+        }
+
     }
 }
