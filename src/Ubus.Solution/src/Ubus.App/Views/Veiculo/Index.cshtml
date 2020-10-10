@@ -1,13 +1,11 @@
 ﻿@model IEnumerable<Ubus.App.ViewModels.VeiculoViewModel>
 
 <div class="container jumbotron">
-    Motoristas
-</div>
-
-
-<div class="container jumbotron">
     <div>
         <p>Veículos Cadastrados</p>
+    </div>
+    <div>
+        <a class="btn btn-primary" asp-action="Adicionar">Adicionar Veículo</a>
     </div>
 </div>
 <table class="table table-hover ">
@@ -41,7 +39,7 @@
                 </td>
                 <td class="text-right" scope="row">
                     <a class="btn btn-warning my-1" asp-action="Details" asp-route-id="@item.Id"> Detalhes </a>
-                    <a class="btn btn-info my-1" asp-action="Edit"> Editar </a>
+                    <a class="btn btn-info my-1" asp-action="VincularItem" asp-route-idVeiculo="@item.Id"> Vincular Item </a>
                     <a class="btn btn-danger my-1" asp-action="Delete"> Excluir </a>
                 </td>
             </tr>

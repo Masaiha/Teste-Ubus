@@ -5,6 +5,7 @@ using Ubus.Business.Models;
 using Ubus.Data.Context;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 
 namespace Ubus.Data.Repositories
 {
@@ -27,6 +28,11 @@ namespace Ubus.Data.Repositories
             await Remover(coco.AsNoTracking().FirstOrDefault().vi.Id);
 
             return;
+        }
+
+        public async Task<IEnumerable<AdicionalItem>> ObterPorIdVeiculo(Guid id)
+        {
+            return await Db.AdicionalItens.Where(x => x.VeiculoId == id).ToListAsync();
         }
     }
 }

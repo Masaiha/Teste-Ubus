@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Ubus.App.ViewModels.ItemViewModel>
+        
+@{
+    ViewData["Title"] = "Vincular itens";
+}
+
+<h1>Vincular</h1>
+
+<h4>Itens para veículo Id: @ViewData["IdVeiculo"]</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        @foreach (var item in Model)
+        {
+            <form asp-action="VincularItem" method="post">
+                <div class="form-group">
+                    <input hidden type="checkbox" asp-for="@item.Selected" />
+                    <input type="hidden" id="@item.Id" name="Id" value="@item.Id" />
+                    <input type="hidden" name="Nome" value="@item.Nome" />
+                    <label>@item.Nome</label>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Vincular Itens" class="btn btn-primary" />
+                </div>
+            </form>
+        }
+        </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
