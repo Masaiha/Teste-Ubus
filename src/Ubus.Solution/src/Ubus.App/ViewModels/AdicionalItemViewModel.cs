@@ -8,7 +8,6 @@ namespace Ubus.App.ViewModels
         public Guid ItemId { get; set; }
         public Guid VeiculoId { get; set; }
         public ItemViewModel Item { get; set; }
-        //public Item Item { get; set; }
         public VeiculoViewModel Veiculo { get; set; }
     }
 }

@@ -2,12 +2,10 @@
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Ubus.App.ViewModels;
 using Ubus.Business.Interfaces.Repositories;
 using Ubus.Business.Models;
-using Ubus.Data.Repositories;
 
 namespace Ubus.App.Controllers
 {
@@ -82,6 +80,5 @@ namespace Ubus.App.Controllers
 
             return View("Index", _motoristaViewModel);
         }
-
     }
 }
