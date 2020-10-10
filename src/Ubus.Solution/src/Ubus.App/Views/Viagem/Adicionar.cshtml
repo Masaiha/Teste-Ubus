@@ -1,11 +1,99 @@
-﻿@model Ubus.App.ViewModels.ViagemViewModel
+﻿@model Ubus.App.Command.CreateViagemCommand
 
+@{
 
-@*<div>@Model.Id</div>
-<div>@Model.Nome</div>
-<div>@Model.Saida</div>
-<div>@Model.Chegada</div>
-<div>@Model.Finalizado</div>
-<div>@Model.Rota.Itinerario</div>
-<div>@Model.Veiculo.Modelo</div>*@
+    ViewData["Title"] = "Adicionar";
+}
 
+<h1>Adicionar</h1>
+
+<h4>Viagem</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Adicionar">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Nome" class="control-label"></label>
+                <input asp-for="Nome" class="form-control" />
+                <span asp-validation-for="Nome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Valor" class="control-label"></label>
+                <input type="number" asp-for="Valor" class="form-control" />
+                <span asp-validation-for="Valor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Saida" class="control-label"></label>
+                <input type="date" asp-for="Saida" class="form-control" />
+                <span asp-validation-for="Saida" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Chegada" class="control-label"></label>
+                <input type="date" asp-for="Chegada" class="form-control" />
+                <span asp-validation-for="Chegada" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="form-group">
+                    <label asp-for="VeiculoId" class="control-label">Veículos</label>
+                    <select asp-for="VeiculoId" class="form-control" asp-items="ViewBag.Veiculos"></select>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-group">
+                    <label asp-for="MotoristaId" class="control-label">Motoristas</label>
+                    <select asp-for="MotoristaId" class="form-control" asp-items="ViewBag.Motoristas"></select>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-group">
+                    <label asp-for="RotaId" class="control-label">Rotas</label>
+                    <select asp-for="RotaId" class="form-control" asp-items="ViewBag.Rotas"></select>
+                </div>
+            </div>
+            <div class="form-group">
+                <select class="custom-select">
+                    <option value="true">Finalizado</option>
+                    <option value="false">Em Andamento</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Adicionar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<div>
+    <a class="btn btn-warning" href="#" onclick="window.history.back()">Voltar</a>
+</div>
+
+@*@model Ubus.App.ViewModels.ViagemViewModel
+
+    <div>@Model.Id</div>
+    <div>@Model.Nome</div>
+    <div>@Model.Saida</div>
+    <div>@Model.Chegada</div>
+    <div>@Model.Finalizado</div>
+    <div>@Model.Rota.Itinerario</div>
+    <div>@Model.Veiculo.Modelo</div>
+
+    <hr />
+    <div class="container">
+        <h3>Alterar Motorista</h3>
+        <a class="btn btn-primary" asp-controller="Motorista" asp-action="AlteracaoMotoristaViagem" asp-route-idViagem="@Model.Id">Alterar</a>
+    </div>
+
+    <div class="container">
+        <h3>Motorista que fizeram esta Rota</h3>
+        <a class="btn btn-warning" asp-controller="Motorista" asp-action="ObterMotoristaPorRota" asp-route-idRota="@Model.Rota.Id">Consultar</a>
+    </div>
+
+    <hr />
+    <div class="container">
+        <h3>Alterar itens veículo</h3>
+        <h4>Veículo ID: @Model.Veiculo.Id</h4>
+        <h4>Marca: @Model.Veiculo.Marca</h4>
+        <h4>Modelo: @Model.Veiculo.Modelo</h4>
+
+        <a class="btn btn-primary" asp-controller="Veiculo" asp-action="AlteracaoItensVeiculo" asp-route-idVeiculo="@Model.Veiculo.Id">Alterar</a>
+    </div>*@

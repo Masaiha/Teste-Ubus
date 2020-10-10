@@ -16,9 +16,11 @@ namespace Ubus.Data.Repositories
         {
         }
 
-        public IEnumerable<MotoristaViagem> ObterTodosViagemMotoristas()
+        public async Task<MotoristaViagem> ObterMotoristaViagemPorIdViagem(Guid idViagem)
         {
-            throw new NotImplementedException();
+            return await Db.MotoristaViagens.AsNoTracking()
+                            .Where(x => x.ViagemId == idViagem)
+                            .FirstOrDefaultAsync();
         }
 
         public async Task AdicionaMotoristaViagem(MotoristaViagem motoristaViagem)

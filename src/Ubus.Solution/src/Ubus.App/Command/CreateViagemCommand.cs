@@ -1,9 +1,11 @@
 ﻿using System;
+using Ubus.App.ViewModels;
 
-namespace Ubus.App.ViewModels
+namespace Ubus.App.Command
 {
-    public class ViagemMotoristaViewModel
+    public class CreateViagemCommand
     {
+
         public Guid Id { get; set; }
         public string Nome { get; set; }
         public decimal Valor { get; set; }
@@ -12,8 +14,10 @@ namespace Ubus.App.ViewModels
         public DateTime Chegada { get; set; }
         public Guid VeiculoId { get; set; }
         public Guid RotaId { get; set; }
-        public MotoristaViewModel Motorista { get; set; }
-        public RotaViewModel Rota { get; set; }
-        public VeiculoViewModel Veiculo { get; set; }
+
+        public Guid MotoristaId { get; set; }
+
+        //public RotaViewModel Rota { get; set; }
+        //public VeiculoViewModel Veiculo { get; set; }
     }
 }

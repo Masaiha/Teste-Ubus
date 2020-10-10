@@ -1,14 +1,19 @@
 ﻿@model IEnumerable<Ubus.App.ViewModels.ViagemMotoristaViewModel>
+@{
+    ViewData["Title"] = "Lista de Viagens";
+}
 
-<div class="container jumbotron">
+<h1>@ViewData["Title"]</h1>
+<hr />
+<div style="display: flex; justify-content:flex-start">
     <div>
-        <a class="btn btn-primary" asp-action="FiltrarViagemsPorDia">Somente as de hoje</a>
+        <a class="btn btn-info mr-2 mb-2" asp-action="FiltrarViagemsPorDia">Somente as de hoje</a>
     </div>
     <div>
-        <a class="btn btn-warning" asp-action="AtualizarViagensFinalizadas">Atualizar Viagens</a>
+        <a class="btn btn-info mr-2 mb-2" asp-action="AtualizarViagensFinalizadas">Atualizar Viagens finalizadas</a>
     </div>
     <div>
-        <a class="btn btn-primary" asp-action="Adicionar">Adicionar Viagens</a>
+        <a class="btn btn-info mb-2" asp-action="Adicionar">Adicionar Viagens</a>
     </div>
 </div>
 <table class="table table-hover ">
@@ -33,25 +38,25 @@
     <tbody>
         @foreach (var item in Model)
         {
-        <tr>
-            <td scope="row">
-                @item.Nome
-            </td>
-            <td scope="row">
-                @item.Saida
-            </td>
-            <td scope="row">
-                @if(@item.Motorista != null) @item.Motorista.Nome
-            </td>
-            <td scope="row">
-                @(item.Chegada < DateTime.Now ? "Sim" : "")
-            </td>
-            <td class="text-right" scope="row">
-                <a class="btn btn-warning my-1" asp-action="Details" asp-route-id="@item.Id"> Detalhes </a>
-                <a class="btn btn-info my-1" asp-action="Edit"> Editar </a>
-                <a class="btn btn-danger my-1" asp-action="Delete"> Excluir </a>
-            </td>
-        </tr>
+            <tr>
+                <td scope="row">
+                    @item.Nome
+                </td>
+                <td scope="row">
+                    @item.Saida
+                </td>
+                <td scope="row">
+                    @if (@item.Motorista != null)@item.Motorista.Nome
+                </td>
+                <td scope="row">
+                    @(item.Chegada < DateTime.Now ? "Sim" : "")
+                </td>
+                <td class="text-right" scope="row">
+                    <a class="btn btn-warning my-1" asp-action="Detalhes" asp-route-id="@item.Id"> Detalhes </a>
+                    <a class="btn btn-info my-1" asp-action="Editar" asp-route-id="@item.Id"> Editar </a>
+                    <a class="btn btn-danger my-1" asp-action="Remover"> Excluir </a>
+                </td>
+            </tr>
         }
     </tbody>
 </table>

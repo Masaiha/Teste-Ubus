@@ -6,10 +6,9 @@
 
 <h1>@ViewData["Title"]</h1>
 <hr />
-
-<p>
-    <a class="btn btn-info" asp-action="Adicionar">Nova Rota</a>
-</p>
+<div style="display: flex; justify-content:flex-start">
+    <a class="btn btn-info mr-2 mb-2" asp-action="Adicionar">Nova Rota</a>
+</div>
 <table class="table table-hover">
     <thead class="thead-dark">
         <tr>
@@ -23,22 +22,22 @@
         </tr>
     </thead>
     <tbody>
-        @if(Model != null)
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Id)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Itinerario)
-                </td>
-                <td class="text-right">
-                    <a class="btn btn-warning" asp-action="Detalhes" asp-route-id="@item.Id">Detalhes</a>
-                    <a class="btn btn-info" asp-action="Editar" asp-route-id="@item.Id">Editar</a>
-                    <a class="btn btn-danger" asp-action="Remover" asp-route-id="@item.Id">Remover</a>
-                </td>
-            </tr>
-        }
+        @if (Model != null)
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Itinerario)
+                    </td>
+                    <td class="text-right">
+                        @*<a class="btn btn-warning" href="#" onclick="alert('Não Implementado')">Detalhes</a>
+                            <a class="btn btn-info" href="#" onclick="alert('Não Implementado')">Editar</a>
+                            <a class="btn btn-danger" href="#" onclick="alert('Não Implementado')">Remover</a>*@
+                    </td>
+                </tr>
+            }
     </tbody>
 </table>

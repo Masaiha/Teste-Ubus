@@ -1,12 +1,13 @@
 ﻿@model IEnumerable<Ubus.App.ViewModels.VeiculoViewModel>
+@{
+    ViewData["Title"] = "Lista de Veículos";
+}
 
-<div class="container jumbotron">
-    <div>
-        <p>Veículos Cadastrados</p>
-    </div>
-    <div>
-        <a class="btn btn-primary" asp-action="Adicionar">Adicionar Veículo</a>
-    </div>
+<h1>@ViewData["Title"]</h1>
+<hr />
+
+<div style="display: flex; justify-content:flex-start">
+    <a class="btn btn-info mr-2 mb-2" asp-action="Adicionar">Adicionar Veículo</a>
 </div>
 <table class="table table-hover ">
     <thead class="thead-dark">
@@ -37,10 +38,11 @@
                 <td scope="row">
                     @item.Modelo
                 </td>
-                <td class="text-right" scope="row">
-                    <a class="btn btn-warning my-1" asp-action="Details" asp-route-id="@item.Id"> Detalhes </a>
+                <td class="text-right">
                     <a class="btn btn-info my-1" asp-action="VincularItem" asp-route-idVeiculo="@item.Id"> Vincular Item </a>
-                    <a class="btn btn-danger my-1" asp-action="Delete"> Excluir </a>
+                    @*<a class="btn btn-warning" href="#" onclick="alert('Não Implementado')">Detalhes</a>
+                        <a class="btn btn-info" href="#" onclick="alert('Não Implementado')">Editar</a>
+                        <a class="btn btn-danger" href="#" onclick="alert('Não Implementado')">Remover</a>*@
                 </td>
             </tr>
         }

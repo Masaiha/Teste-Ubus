@@ -7,9 +7,9 @@
 <h1>@ViewData["Title"]</h1>
 <hr />
 
-<p>
-    <a class="btn btn-info" asp-action="Adicionar">Novo Item</a>
-</p>
+<div style="display: flex; justify-content:flex-start">
+    <a class="btn btn-info mr-2 mb-2" asp-action="Adicionar">Novo Item</a>
+</div>
 <table class="table table-hover">
     <thead class="thead-dark">
         <tr>
@@ -33,9 +33,9 @@
                     @Html.DisplayFor(modelItem => item.Nome)
                 </td>
                 <td class="text-right">
-                    <a class="btn btn-warning" asp-action="Detalhes" asp-route-id="@item.Id">Detalhes</a>
-                    <a class="btn btn-info" asp-action="Editar" asp-route-id="@item.Id">Editar</a>
-                    <a class="btn btn-danger" asp-action="Remover" asp-route-id="@item.Id">Remover</a>
+                    @*<a class="btn btn-warning" href="#" onclick="alert('Não Implementado')">Detalhes</a>
+                    <a class="btn btn-info" href="#" onclick="alert('Não Implementado')">Editar</a>
+                    <a class="btn btn-danger" href="#" onclick="alert('Não Implementado')">Remover</a>*@
                 </td>
             </tr>
         }

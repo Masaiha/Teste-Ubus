@@ -1,0 +1,70 @@
+﻿@model Ubus.App.ViewModels.ViagemViewModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div>
+    <h4>Viagem - @Model.Rota.Itinerario</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Saida)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Saida)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Chegada)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Chegada)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Rota.Itinerario)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Rota.Itinerario)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Veiculo.Modelo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Veiculo.Modelo)
+        </dd>
+    </dl>
+</div>
+
+<hr />
+<div class="container">
+    <h5>Alterar Motorista</h5>
+    <a class="btn btn-primary" asp-controller="Motorista" asp-action="AlteracaoMotoristaViagem" asp-route-idViagem="@Model.Id">Alterar</a>
+</div>
+<br />
+<div class="container">
+    <h5>Motorista que fizeram esta Rota - (@Model.Rota.Itinerario)</h5>
+    <a class="btn btn-primary" asp-controller="Motorista" asp-action="ObterMotoristaPorRota" asp-route-idRota="@Model.Rota.Id">Consultar</a>
+</div>
+
+<hr />
+<div class="container">
+    <h5>Alterar itens veículo - @Model.Veiculo.Id</h5>
+    <a class="btn btn-primary" asp-controller="Veiculo" asp-action="AlteracaoItensVeiculo" asp-route-idVeiculo="@Model.Veiculo.Id">Alterar</a>
+</div>
+
+<hr />
+<div class="container">
+    <a class="btn btn-warning" href="#" onclick="window.history.back()">Voltar</a>
+</div>

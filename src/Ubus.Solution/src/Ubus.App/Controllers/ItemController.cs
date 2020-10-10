@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
-using AutoMapper;
+﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using Ubus.App.Models;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using Ubus.App.ViewModels;
 using Ubus.Business.Interfaces.Repositories;
 using Ubus.Business.Models;

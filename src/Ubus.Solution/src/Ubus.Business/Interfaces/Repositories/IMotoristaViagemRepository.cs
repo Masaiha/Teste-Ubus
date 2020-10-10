@@ -7,7 +7,7 @@ namespace Ubus.Business.Interfaces.Repositories
 {
     public interface IMotoristaViagemRepository : IBaseRepository<MotoristaViagem>
     {
-        IEnumerable<MotoristaViagem> ObterTodosViagemMotoristas();
+        Task<MotoristaViagem> ObterMotoristaViagemPorIdViagem(Guid idViagem);
         Task AdicionaMotoristaViagem(MotoristaViagem motoristaViagem);
     }
 }

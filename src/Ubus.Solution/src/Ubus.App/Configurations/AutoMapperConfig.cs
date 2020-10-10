@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Ubus.App.Command;
 using Ubus.App.ViewModels;
 using Ubus.Business.Models;
 
@@ -18,6 +19,7 @@ namespace Ubus.App.Configurations
             CreateMap<MotoristaViagemViewModel, MotoristaViagem>().ReverseMap();
             CreateMap<VeiculoItensViewModel, VeiculoItens>().ReverseMap();
 
+            CreateMap<CreateViagemCommand, Viagem>().ReverseMap();
         }
     }
 }
