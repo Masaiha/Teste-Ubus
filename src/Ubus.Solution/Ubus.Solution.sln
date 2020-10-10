@@ -3,11 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ubus.App", "src\Ubus.App\Ubus.App.csproj", "{B8428FF1-90EF-4A59-864D-931637150015}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ubus.App", "src\Ubus.App\Ubus.App.csproj", "{B8428FF1-90EF-4A59-864D-931637150015}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ubus.Business", "src\Ubus.Business\Ubus.Business.csproj", "{2A52A842-780B-4754-8DAC-032C3C5A6A4E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ubus.Business", "src\Ubus.Business\Ubus.Business.csproj", "{2A52A842-780B-4754-8DAC-032C3C5A6A4E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ubus.Data", "src\Ubus.Data\Ubus.Data.csproj", "{283E8589-13D7-47C8-BFC9-22148E12C817}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ubus.Data", "src\Ubus.Data\Ubus.Data.csproj", "{283E8589-13D7-47C8-BFC9-22148E12C817}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "api", "api", "{B7F7CDA8-D913-4660-8190-E09E96D83891}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ubus.Api", "src\Api\Ubus.Api\Ubus.Api.csproj", "{7CAE9052-2BD5-4309-B20C-6B2B75E2623C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,9 +31,16 @@ Global
 		{283E8589-13D7-47C8-BFC9-22148E12C817}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{283E8589-13D7-47C8-BFC9-22148E12C817}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{283E8589-13D7-47C8-BFC9-22148E12C817}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CAE9052-2BD5-4309-B20C-6B2B75E2623C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CAE9052-2BD5-4309-B20C-6B2B75E2623C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CAE9052-2BD5-4309-B20C-6B2B75E2623C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CAE9052-2BD5-4309-B20C-6B2B75E2623C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7CAE9052-2BD5-4309-B20C-6B2B75E2623C} = {B7F7CDA8-D913-4660-8190-E09E96D83891}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {35C29798-7F65-47F5-9F20-7F61552E27C1}
